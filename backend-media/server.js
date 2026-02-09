@@ -1,0 +1,102 @@
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+const fs = require('fs');
+const config = require('./config/config');
+const errorHandler = require('./middleware/errorHandler');
+const { startCleanupService } = require('./services/cleanupService');
+
+const audioRoutes = require('./routes/audioRoutes');
+const videoRoutes = require('./routes/videoRoutes');
+
+const app = express();
+
+// CORS configuration
+const corsOptions = {
+    origin: function (origin, callback) {
+        // Allow requests with no origin (mobile apps, curl, etc.)
+        if (!origin) return callback(null, true);
+
+        const allowedOrigins = [
+            'http://localhost:3000',
+            'http://localhost:5173',
+            'https://uniconvert-frontend.onrender.com'
+        ];
+
+        // Also allow any .onrender.com subdomain
+        if (allowedOrigins.includes(origin) || origin.endsWith('.onrender.com')) {
+            return callback(null, true);
+        }
+
+        callback(new Error('Not allowed by CORS'));
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    exposedHeaders: ['Content-Disposition'],
+    maxAge: 86400 // 24 hours
+};
+
+app.use(cors(corsOptions));
+
+// Handle pre-flight requests explicitly
+app.options('*', cors(corsOptions));
+
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ extended: true, limit: '100mb' }));
+
+if (!fs.existsSync(config.uploadDir)) {
+    fs.mkdirSync(config.uploadDir, { recursive: true });
+}
+if (!fs.existsSync(config.convertedDir)) {
+    fs.mkdirSync(config.convertedDir, { recursive: true });
+}
+
+app.use('/api/audio', audioRoutes);
+app.use('/api/video', videoRoutes);
+
+app.get('/api/download/:filename', (req, res) => {
+    const { filename } = req.params;
+    const filePath = path.join(config.convertedDir, filename);
+
+    if (!fs.existsSync(filePath)) {
+        return res.status(404).json({ success: false, error: 'File not found' });
+    }
+
+    res.download(filePath, filename);
+});
+
+app.get('/api/health', (req, res) => {
+    res.json({
+        success: true,
+        message: 'Universal Converter Media API is running',
+        version: '1.0.0',
+        service: 'media',
+        timestamp: new Date().toISOString()
+    });
+});
+
+app.get('/api/formats', (req, res) => {
+    res.json({
+        success: true,
+        formats: config.allowedFormats
+    });
+});
+
+app.use(errorHandler);
+
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        error: 'Endpoint not found'
+    });
+});
+
+const PORT = config.port;
+
+app.listen(PORT, () => {
+    console.log(`Universal Converter Media API running on port ${PORT}`);
+    startCleanupService();
+});
+
+module.exports = app;
