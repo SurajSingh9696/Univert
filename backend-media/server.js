@@ -18,9 +18,7 @@ const corsOptions = {
         if (!origin) return callback(null, true);
 
         const allowedOrigins = [
-            'http://localhost:3000',
-            'http://localhost:5173',
-            'https://uniconvert-frontend.onrender.com'
+            "https://univert-ui.vercel.app"
         ];
 
         // Also allow any .onrender.com subdomain
