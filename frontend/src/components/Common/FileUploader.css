@@ -1,5 +1,7 @@
 .file-uploader-wrapper {
     width: 100%;
+    max-width: 100%;
+    overflow: visible;
 }
 
 .file-uploader {
@@ -10,11 +12,14 @@
     justify-content: center;
     gap: 16px;
     padding: 48px 32px;
+    width: 100%;
+    box-sizing: border-box;
     background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg-tertiary) 100%);
     border: 2px dashed var(--color-border);
     border-radius: var(--radius-xl);
     cursor: pointer;
     transition: all var(--transition-base);
+    overflow: visible;
 }
 
 .file-uploader:hover {
@@ -49,6 +54,9 @@
 
 .upload-text {
     text-align: center;
+    width: 100%;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 .upload-title {
@@ -71,9 +79,12 @@
 
 .upload-info {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
     font-size: 0.8rem;
     color: var(--color-text-muted);
+    max-width: 100%;
 }
 
 .upload-error {

@@ -1,7 +1,8 @@
 .batch-converter {
     padding: 48px 0;
     min-height: calc(100vh - 144px);
-    overflow-x: hidden;
+    width: 100%;
+    overflow: visible;
 }
 
 .batch-converter .page-header {
@@ -17,7 +18,8 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .batch-settings {
@@ -30,6 +32,8 @@
     border-radius: var(--radius-xl);
     flex-wrap: wrap;
     box-shadow: var(--shadow-sm);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .setting-group {
@@ -94,7 +98,8 @@
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
-    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .files-header {
@@ -117,28 +122,7 @@
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 14px;
     margin-bottom: 24px;
-    max-height: 450px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: 8px;
-}
-
-.files-grid::-webkit-scrollbar {
-    width: 8px;
-}
-
-.files-grid::-webkit-scrollbar-track {
-    background: var(--color-bg-tertiary);
-    border-radius: var(--radius-md);
-}
-
-.files-grid::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
-    border-radius: var(--radius-md);
-}
-
-.files-grid::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-hover);
+    width: 100%;
 }
 
 .file-card {
@@ -151,6 +135,8 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
     transition: all var(--transition-fast);
     box-shadow: var(--shadow-sm);
 }
@@ -223,6 +209,8 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .results-header {
@@ -247,27 +235,7 @@
     display: grid;
     gap: 12px;
     margin-bottom: 32px;
-    max-height: 500px;
-    overflow-y: auto;
-    padding-right: 8px;
-}
-
-.results-grid::-webkit-scrollbar {
-    width: 8px;
-}
-
-.results-grid::-webkit-scrollbar-track {
-    background: var(--color-bg-tertiary);
-    border-radius: var(--radius-md);
-}
-
-.results-grid::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
-    border-radius: var(--radius-md);
-}
-
-.results-grid::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-dark);
+    width: 100%;
 }
 
 .result-card {
@@ -279,6 +247,8 @@
     background: var(--color-bg-tertiary);
     border-radius: var(--radius-lg);
     text-align: left;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .result-info {
@@ -316,6 +286,8 @@
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .converting-section p {
@@ -373,7 +345,6 @@
     .files-grid {
         grid-template-columns: 1fr;
         gap: 12px;
-        max-height: 400px;
     }
 
     .file-card {
@@ -394,7 +365,8 @@
     }
 
     .results-grid {
-        max-height: 400px;
+        max-height: none;
+        overflow: visible;
     }
 
     .result-card {
@@ -455,7 +427,6 @@
     }
 
     .files-grid {
-        max-height: 350px;
         grid-template-columns: 1fr;
     }
 
