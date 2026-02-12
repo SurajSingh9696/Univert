@@ -12,6 +12,8 @@ import AudioPage from './pages/AudioPage'
 import VideoPage from './pages/VideoPage'
 import BatchConverter from './pages/BatchConverter'
 import HistoryPage from './pages/HistoryPage'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsAndConditions from './pages/TermsAndConditions'
 import ErrorPage from './pages/ErrorPage'
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
                                 <Route path="/video" element={<VideoPage />} />
                                 <Route path="/batch" element={<BatchConverter />} />
                                 <Route path="/history" element={<HistoryPage />} />
+                                <Route path="/privacy" element={<PrivacyPolicy />} />
+                                <Route path="/terms" element={<TermsAndConditions />} />
                                 <Route path="*" element={<ErrorPage />} />
                             </Routes>
                         </main>

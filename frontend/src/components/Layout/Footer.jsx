@@ -88,8 +88,8 @@ function Footer() {
                 <div className="footer-bottom">
                     <p className="copyright">© {currentYear} UniConvert. All rights reserved.</p>
                     <div className="footer-bottom-links">
-                        <span className="footer-bottom-link">Privacy Policy</span>
-                        <span className="footer-bottom-link">Terms of Service</span>
+                        <Link to="/privacy" className="footer-bottom-link">Privacy Policy</Link>
+                        <Link to="/terms" className="footer-bottom-link">Terms of Service</Link>
                     </div>
                 </div>
             </div>

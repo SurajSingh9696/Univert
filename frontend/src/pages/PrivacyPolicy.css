@@ -1,0 +1,227 @@
+.privacy-policy-page {
+    padding: 80px 0 60px;
+    min-height: calc(100vh - 144px);
+    background: var(--color-bg-primary);
+}
+
+.policy-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    margin-bottom: 24px;
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.back-link:hover {
+    background: var(--color-primary-light);
+    transform: translateX(-4px);
+}
+
+.policy-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.policy-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+.policy-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.policy-section {
+    margin-bottom: 48px;
+}
+
+.policy-section:last-child {
+    margin-bottom: 0;
+}
+
+.policy-section h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.policy-section h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.policy-section p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: 16px;
+}
+
+.policy-section ul {
+    margin: 16px 0;
+    padding-left: 24px;
+    list-style: none;
+}
+
+.policy-section ul li {
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: 12px;
+    padding-left: 24px;
+}
+
+.policy-section ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.contact-info {
+    padding: 24px;
+    background: var(--color-bg-secondary);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    margin-top: 16px;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+}
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.policy-footer {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 2px solid var(--color-border);
+    text-align: center;
+}
+
+.policy-footer p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 16px;
+}
+
+.related-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-md);
+}
+
+.related-link:hover {
+    background: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+    .privacy-policy-page {
+        padding: 60px 0 40px;
+    }
+
+    .policy-header {
+        margin-bottom: 40px;
+    }
+
+    .policy-title {
+        font-size: 2rem;
+    }
+
+    .policy-content {
+        padding: 32px 24px;
+        border-radius: var(--radius-lg);
+    }
+
+    .policy-section {
+        margin-bottom: 36px;
+    }
+
+    .policy-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+    }
+
+    .policy-section h3 {
+        font-size: 1.1rem;
+        margin-top: 20px;
+    }
+
+    .policy-section p,
+    .policy-section ul li {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .privacy-policy-page {
+        padding: 40px 0 30px;
+    }
+
+    .policy-title {
+        font-size: 1.75rem;
+    }
+
+    .policy-content {
+        padding: 24px 16px;
+    }
+
+    .policy-section h2 {
+        font-size: 1.35rem;
+    }
+
+    .policy-section h3 {
+        font-size: 1rem;
+    }
+
+    .contact-info {
+        padding: 16px;
+    }
+}

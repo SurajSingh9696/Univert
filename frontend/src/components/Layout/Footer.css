@@ -115,12 +115,14 @@
 .footer-bottom-link {
     font-size: 0.85rem;
     color: var(--color-text-muted);
+    text-decoration: none;
     cursor: pointer;
     transition: color var(--transition-fast);
 }
 
 .footer-bottom-link:hover {
-    color: var(--color-text-secondary);
+    color: var(--color-primary);
+    text-decoration: underline;
 }
 
 @media (max-width: 1024px) {
