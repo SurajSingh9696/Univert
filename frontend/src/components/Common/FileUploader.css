@@ -114,4 +114,43 @@
         width: 32px;
         height: 32px;
     }
+
+    .upload-title {
+        font-size: 1rem;
+    }
+
+    .upload-subtitle {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .file-uploader {
+        padding: 24px 16px;
+        gap: 12px;
+    }
+
+    .upload-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .upload-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .upload-title {
+        font-size: 0.95rem;
+    }
+
+    .upload-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .upload-info {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.75rem;
+    }
 }

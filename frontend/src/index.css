@@ -70,6 +70,8 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   width: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -82,6 +84,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   width: 100%;
+  touch-action: manipulation;
 }
 
 #root {
@@ -106,6 +109,9 @@ button {
   border: none;
   outline: none;
   transition: all var(--transition-base);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
 }
 
 input,
